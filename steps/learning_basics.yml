@@ -1,0 +1,47 @@
+id: learning_basics
+learningObjectives:
+  - Understading the basics of 3d modeling and three.js
+hints:
+
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: ness
+        messages:
+          - text: 'So, our copatitors at <funny stupied name> stealing our clients and I heard this is because some stupied animations they add into their website.'
+            delay: 2000
+          - text: 'The product wants us to try and use 3d on our website, see if it getting the customers attentions back'
+            delay: 1500
+          - text: 'Sart with these resorces to unsderstand the basics: [Video](https://youtu.be/Q7AOvWpIVHU), [Blog-post](https://medium.com/geekculture/getting-started-with-three-js-1c2d02e18330), [three.js docs](https://threejs.org/docs/#manual/en/introduction/Creating-a-scene)'
+            delay: 1500
+          - text: 'Let me know when you ready'
+trigger:
+  type: user_message
+  params:
+    person: ness
+  flowNode:
+    if:
+      conditions:
+        - conditionId: text_match_regex
+          params:
+            text: '${userMessageText}'
+            regex: ready|done|finish|ok|
+            flags: i
+      then:
+        do:
+          - actionId: bot_message
+            params:
+              person: ness
+              messages:
+                - text: Ok, let's keep going.
+                  delay: 1300
+          - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: ness
+              messages:
+                - text: All good ?
+                  delay: 2500
