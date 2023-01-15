@@ -5,11 +5,11 @@ summary: "3D is awsome, Let's make it more 3d!"
 level: intermediate
 steps:
   - learning_basics
-  - quize
-  - component_creation_0
-  - component_creation_1
-  - component_creation_0
-  - adding_animation
+  # - quize
+  # - component_creation_0
+  # - component_creation_1
+  # - component_creation_0
+  # - adding_animation
 duration: 2.5
 skills:
   - frontend
